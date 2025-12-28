@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background: #e63946;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.post {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #e63946;
+}
+
+footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
