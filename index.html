@@ -40,7 +40,7 @@ body{
 }
 
 #time{
-    margin-bottom:15px;
+    margin-bottom:10px;
     font-weight:bold;
     color:#00ffff;
 }
@@ -72,6 +72,17 @@ a.btn:hover{
 .discord{background:#5865F2;}
 .gmail{background:#d93025;}
 
+.music-btn{
+    margin-bottom:10px;
+    padding:8px 16px;
+    border:none;
+    border-radius:20px;
+    background:#00ffff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+}
+
 /* Rating */
 .rating-box{margin-top:20px;}
 .stars span{
@@ -86,7 +97,7 @@ a.btn:hover{
 <body>
 
 <!-- 🎵 BACKGROUND MUSIC -->
-<audio autoplay loop>
+<audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
@@ -94,31 +105,35 @@ a.btn:hover{
 
 <img src="profile.jpg" class="profile">
 
+<button class="music-btn" onclick="playMusic()">🎵 Play / Pause Music</button>
+
 <div id="time"></div>
 
 <div class="bio">
 ᴇᴀꜱʏ ]
 
 🎈 Hlw Friends‼️
-Welcome to My bio 😘
+    
+Welcome to My bio 
 
 Name :- ᴍᴀʜɪᴍ
+
+    Clan-Kazi
     
 Kind :- Muslim
-
-    Clain-Kazi
     
 ❤️ From 🇧🇩 Tangail-BD
-    
-    Remember those line
-                Trusting people is, what’s most foolish in this world-- 
-    --Equality is just a fantasy for, the weak to cling to
 
 Dream :- Be rich
     
 Class :- SSC 2k27
     
 Land on Earth :- 22 Dec
+
+    remember-->
+
+             Trusting people is, what’s most foolish in this world--
+    --Equality is just a fantasy for, the weak to cling to
     
 Goal :- Hoz-heaven
 
@@ -154,6 +169,15 @@ function updateTime(){
 }
 setInterval(updateTime,1000);
 updateTime();
+
+function playMusic(){
+  const m = document.getElementById("bgMusic");
+  if(m.paused){
+    m.play();
+  }else{
+    m.pause();
+  }
+}
 </script>
 
 <!-- 🔥 FIREBASE REAL RATING -->
