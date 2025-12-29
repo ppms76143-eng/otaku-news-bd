@@ -9,169 +9,207 @@
 body{
   margin:0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg,#001f3f,#003366);
+  background:linear-gradient(135deg,#000428,#004e92);
   color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
+  text-align:center;
 }
 
 .box{
-  background:#020c1b;
-  padding:30px;
+  max-width:420px;
+  margin:30px auto;
+  background:rgba(0,0,0,0.6);
+  padding:25px;
   border-radius:20px;
-  width:320px;
-  text-align:center;
-  box-shadow:0 0 25px #00c3ff;
+  box-shadow:0 0 25px cyan;
 }
 
 .profile{
-  width:120px;
-  height:120px;
+  width:130px;
+  height:130px;
   border-radius:50%;
-  border:4px solid #00c3ff;
-  margin-bottom:15px;
-  animation: pulse 2s infinite;
+  border:3px solid cyan;
+  animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
-  0%{box-shadow:0 0 10px #00c3ff;}
-  50%{box-shadow:0 0 30px #00c3ff;}
-  100%{box-shadow:0 0 10px #00c3ff;}
+  0%{box-shadow:0 0 5px cyan;}
+  50%{box-shadow:0 0 25px cyan;}
+  100%{box-shadow:0 0 5px cyan;}
+}
+
+#time{
+  margin:10px 0;
+  font-weight:bold;
+  color:#00ffff;
+}
+
+.music-btn{
+  margin:10px 0;
+  padding:8px 18px;
+  border:none;
+  border-radius:20px;
+  background:#00ffff;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 .bio{
+  white-space:pre-line;
   font-size:14px;
   line-height:1.6;
+  margin:15px 0;
 }
 
-.btn{
+a.btn{
   display:block;
-  text-decoration:none;
-  padding:12px;
   margin:10px 0;
+  padding:12px;
   border-radius:30px;
   color:white;
+  text-decoration:none;
   font-weight:bold;
 }
 
 .telegram{background:#229ED9;}
-.instagram{background:#e1306c;}
 .youtube{background:#ff0000;}
+.instagram{background:#e1306c;}
 .discord{background:#5865F2;}
-.email{background:#db4437;}
+.gmail{background:#d93025;}
 
-.stars{
-  margin-top:15px;
-  font-size:28px;
-}
-
+/* Rating */
+.rating-box{margin-top:20px;}
 .stars span{
+  font-size:30px;
   cursor:pointer;
-  color:#444;
+  color:gray;
   transition:0.3s;
 }
-
 .stars span:hover,
 .stars span.active{
   color:gold;
-}
-
-#rating-text{
-  margin-top:8px;
-  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<audio autoplay loop>
+<!-- 🎵 MUSIC -->
+<audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <div class="box">
-  <img src="profile.jpg" class="profile">
 
-  <div class="bio">
-    🎈 <b>Hello Friends!</b><br>
-      
-    Welcome to my bio 😘<br><br>
-      
-    <b>Name:</b> Mahim<br>
-      
-    <b>From:</b> 🇧🇩 Tangail, BD<br>
-      
-    <b>Dream:</b> Be Rich<br>
-      
-    <b>Goal:</b> Hoz-Heaven<br>
-      
-    <b>Username:</b> @psycho001
+<img src="profile.jpg" class="profile">
 
-      Remember
-                Trusting people is, what’s most foolish in this world-- 
-                --Equality is just a fantasy for, the weak to cling to
-      
-  </div>
+<button class="music-btn" onclick="toggleMusic()">🎵 Play / Pause Music</button>
 
-  <a class="btn telegram" href="https://t.me/EditingCourt" target="_blank">Telegram Channel</a>
-  <a class="btn instagram" href="https://www.instagram.com/your_avery36/" target="_blank">Instagram</a>
-  <a class="btn youtube" href="https://www.youtube.com/@mx-okamiz57" target="_blank">YouTube</a>
-  <div class="btn discord">Discord : mahimaxt</div>
-  <a class="btn email" href="mailto:shakil397576@gmail.com">Email Me</a>
+<div id="time"></div>
 
-  <div class="stars">
-    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-  </div>
-  <div id="rating-text">Rate My Bio</div>
+<div class="bio">
+ᴇᴀꜱʏ ]
+
+🎈 𝘏𝘭𝘸 𝘍𝘳𝘪𝘦𝘯𝘥𝘴‼️
+𝘞𝘦𝘭𝘤𝘰𝘮𝘦 𝘵𝘰 𝘔𝘺 𝘣𝘪𝘰 
+
+𝘕𝘢𝘮𝘦 :- ᴍᴀʜɪᴍ
+
+𝘒𝘪𝘯𝘥 𝘔𝘶𝘴𝘭𝘪𝘮
+❤️𝘍𝘳𝘰𝘮 🇧🇩 ᴛᴀɴɢᴀɪʟ🍀-𝘉𝘋
+
+  Remember-->
+             Trusting people is, what’s most foolish in this world-- 
+              --Equality is just a fantasy for, the weak to cling to
+
+𝘋𝘳𝘦𝘢𝘮 :- 𝘉𝘦 ʀɪᴄʜ
+𝘊𝘭𝘢𝘴𝘴 :- ꜱꜱᴄ 2ᴋ27
+
+𝘓𝘢𝘯𝘥 𝘰𝘯 𝘌𝘢𝘳𝘵𝘩 :- 22 ᴅᴇᴄ
+𝘎𝘰𝘢𝘭 :- 𝘏𝘰𝘻-ʜᴇᴀᴠᴇɴ
+
+𝘜𝘴𝘦𝘳𝘯𝘢𝘮𝘦 📱 :- @Genius_695
+
+𝘛𝘩𝘢𝘯𝘬𝘴 𝘍𝘰𝘳 𝘝𝘪𝘴𝘪𝘵
+𝘐𝘧 𝘺𝘰𝘶 𝘭𝘪𝘬𝘦 𝘔𝘺 𝘉𝘪𝘰 𝘎𝘪𝘷𝘦 𝘙𝘦𝘢𝘤𝘵𝘪
 </div>
 
+<a class="btn telegram" href="https://t.me/EditingCourt" target="_blank">Telegram Channel</a>
+<a class="btn youtube" href="https://www.youtube.com/@mx-okamiz57" target="_blank">YouTube</a>
+<a class="btn instagram" href="https://www.instagram.com/your_avery36/" target="_blank">Instagram</a>
+<a class="btn discord" href="https://discord.com/users/mahimaxt" target="_blank">Discord</a>
+<a class="btn gmail" href="mailto:shakil397576@gmail.com">Email</a>
+
+<div class="rating-box">
+<p>⭐ Rate My Bio</p>
+<div class="stars">
+  <span data-star="1">★</span>
+  <span data-star="2">★</span>
+  <span data-star="3">★</span>
+  <span data-star="4">★</span>
+  <span data-star="5">★</span>
+</div>
+<p id="rating-text">⭐ 0.0 / 5 (0 votes)</p>
+</div>
+
+</div>
+
+<script>
+/* Bangladesh Time */
+function updateTime(){
+  document.getElementById("time").innerText =
+    "🇧🇩 Bangladesh Time: " +
+    new Date().toLocaleTimeString("en-US",{timeZone:"Asia/Dhaka"});
+}
+setInterval(updateTime,1000);
+updateTime();
+
+/* Music */
+function toggleMusic(){
+  const m=document.getElementById("bgMusic");
+  m.paused ? m.play() : m.pause();
+}
+</script>
+
+<!-- ⭐ PERFECT RATING SYSTEM -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_BUCKET",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "PASTE_YOUR_API_KEY",
+  authDomain: "PASTE_YOUR_DOMAIN",
+  projectId: "PASTE_YOUR_PROJECT_ID",
+  storageBucket: "PASTE_YOUR_BUCKET",
+  messagingSenderId: "PASTE_YOUR_SENDER_ID",
+  appId: "PASTE_YOUR_APP_ID"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const ref = doc(db,"ratings","bio");
 
-const stars = document.querySelectorAll(".stars span");
-const text = document.getElementById("rating-text");
+const stars=document.querySelectorAll(".stars span");
+const text=document.getElementById("rating-text");
 
-stars.forEach((star,i)=>{
-  star.addEventListener("click",()=>rate(i+1));
+stars.forEach((s,i)=>{
+  s.addEventListener("click",()=>rate(i+1));
 });
 
-async function rate(value){
-  stars.forEach((s,i)=>s.classList.toggle("active",i<value));
-
+async function rate(val){
+  stars.forEach((s,i)=>s.classList.toggle("active",i<val));
   let total=0,count=0;
-  const snap = await getDoc(ref);
-  if(snap.exists()){
-    total=snap.data().total;
-    count=snap.data().count;
-  }
-  total+=value;
-  count+=1;
-
+  const snap=await getDoc(ref);
+  if(snap.exists()){total=snap.data().total;count=snap.data().count;}
+  total+=val; count++;
   await setDoc(ref,{total,count});
   load();
 }
 
 async function load(){
-  const snap = await getDoc(ref);
+  const snap=await getDoc(ref);
   if(snap.exists()){
     const avg=(snap.data().total/snap.data().count).toFixed(1);
-    text.innerText=`⭐ ${avg}/5 (${snap.data().count} votes)`;
+    text.innerText=`⭐ ${avg} / 5 (${snap.data().count} votes)`;
     stars.forEach((s,i)=>s.classList.toggle("active",i<Math.round(avg)));
   }
 }
