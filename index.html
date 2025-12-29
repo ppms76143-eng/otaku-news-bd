@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mahim Bio</title>
+<title>Mahim | Bio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -16,20 +16,21 @@ body{
 }
 
 .box{
-    max-width:400px;
+    max-width:420px;
     margin:40px auto;
     background:rgba(0,0,0,0.6);
-    padding:20px;
+    padding:25px;
     border-radius:20px;
     box-shadow:0 0 20px cyan;
 }
 
 .profile{
-    width:120px;
-    height:120px;
+    width:130px;
+    height:130px;
     border-radius:50%;
     border:3px solid cyan;
-    animation: pulse 2s infinite;
+    animation:pulse 2s infinite;
+    margin-bottom:10px;
 }
 
 @keyframes pulse{
@@ -38,10 +39,17 @@ body{
     100%{box-shadow:0 0 5px cyan;}
 }
 
+#time{
+    margin-bottom:15px;
+    font-weight:bold;
+    color:#00ffff;
+}
+
 .bio{
     white-space:pre-line;
-    margin-top:15px;
     font-size:14px;
+    line-height:1.6;
+    margin-bottom:15px;
 }
 
 a.btn{
@@ -52,111 +60,144 @@ a.btn{
     color:white;
     text-decoration:none;
     font-weight:bold;
+    transition:0.3s;
+}
+a.btn:hover{
+    transform:scale(1.05);
 }
 
+.telegram{background:#229ED9;}
 .youtube{background:#ff0000;}
-.discord{background:#5865F2;}
-.telegram{background:#0088cc;}
 .instagram{background:#e1306c;}
+.discord{background:#5865F2;}
 .gmail{background:#d93025;}
 
-.time{
-    margin-top:15px;
-    font-size:14px;
-    color:#00ffff;
-}
-
-/* rating */
-.rating-box{
-    margin-top:20px;
-}
+/* Rating */
+.rating-box{margin-top:20px;}
 .stars span{
     font-size:30px;
     cursor:pointer;
     color:gray;
 }
-.stars span:hover{
-    color:gold;
-}
+.stars span:hover{color:gold;}
 </style>
 </head>
 
 <body>
 
+<!-- 🎵 BACKGROUND MUSIC -->
 <audio autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
+  <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <div class="box">
 
 <img src="profile.jpg" class="profile">
 
+<div id="time"></div>
+
 <div class="bio">
 ᴇᴀꜱʏ ]
+
 🎈 Hlw Friends‼️
-    
-Welcome to My bio 
+Welcome to My bio 😘
 
 Name :- ᴍᴀʜɪᴍ
-    Clan - Kazi
     
-Kind Muslim
+Kind :- Muslim
+
+    Clain-Kazi
     
 ❤️ From 🇧🇩 Tangail-BD
+    
+    Remember those line
+                Trusting people is, what’s most foolish in this world-- 
+    --Equality is just a fantasy for, the weak to cling to
 
 Dream :- Be rich
     
 Class :- SSC 2k27
     
 Land on Earth :- 22 Dec
-
- remember these two lines-->
-     Trusting people is, what’s most foolish in this world-- 
-    --Equality is just a fantasy for, the weak to cling to
-
+    
 Goal :- Hoz-heaven
 
 Username 📱 :- @psycho001
 </div>
 
-<a class="btn youtube" href="https://www.youtube.com/@mx-okamiz57">YouTube</a>
-<a class="btn discord" href="#">Discord : mahimaxt</a>
-<a class="btn telegram" href="https://t.me/EditingCourt">Telegram Channel</a>
-<a class="btn instagram" href="https://www.instagram.com/your_avery36/">Instagram</a>
-<a class="btn gmail" href="mailto:shakil397576@gmail.com">Gmail</a>
+<a class="btn telegram" href="https://t.me/EditingCourt" target="_blank">Telegram Channel</a>
+<a class="btn instagram" href="https://www.instagram.com/your_avery36/" target="_blank">Instagram</a>
+<a class="btn youtube" href="https://www.youtube.com/@mx-okamiz57" target="_blank">YouTube</a>
+<a class="btn discord" href="https://discord.com/users/mahimaxt" target="_blank">Discord : mahimaxt</a>
+<a class="btn gmail" href="mailto:shakil397576@gmail.com">Email Me</a>
 
-<div class="time" id="bdtime"></div>
-
+<!-- ⭐ RATING -->
 <div class="rating-box">
 <p>⭐ Rate My Bio</p>
 <div class="stars">
-<span onclick="rate(1)">★</span>
-<span onclick="rate(2)">★</span>
-<span onclick="rate(3)">★</span>
-<span onclick="rate(4)">★</span>
-<span onclick="rate(5)">★</span>
+  <span onclick="rate(1)">★</span>
+  <span onclick="rate(2)">★</span>
+  <span onclick="rate(3)">★</span>
+  <span onclick="rate(4)">★</span>
+  <span onclick="rate(5)">★</span>
 </div>
 <p id="rating-text"></p>
 </div>
 
 </div>
 
+<!-- ⏰ BANGLADESH TIME -->
 <script>
 function updateTime(){
-    const time = new Date().toLocaleTimeString("en-US",{timeZone:"Asia/Dhaka"});
-    document.getElementById("bdtime").innerText = "🇧🇩 Bangladesh Time: " + time;
+  const t = new Date().toLocaleTimeString("en-US",{timeZone:"Asia/Dhaka"});
+  document.getElementById("time").innerText = "🇧🇩 Bangladesh Time: " + t;
 }
 setInterval(updateTime,1000);
 updateTime();
+</script>
 
-function rate(star){
-    const stars=document.querySelectorAll(".stars span");
-    stars.forEach((s,i)=>{
-        s.style.color = i < star ? "gold":"gray";
-    });
-    document.getElementById("rating-text").innerText=
-        "Thanks! You rated "+star+"⭐";
+<!-- 🔥 FIREBASE REAL RATING -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+/* 🔴 এখানে আপনার Firebase config paste করবেন */
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_BUCKET",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const ref = doc(db,"ratings","bio");
+
+async function rate(star){
+  const snap = await getDoc(ref);
+  let total=0,count=0;
+  if(snap.exists()){
+    total=snap.data().total;
+    count=snap.data().count;
+  }
+  total+=star;
+  count+=1;
+  await setDoc(ref,{total,count});
+  showRating();
 }
+
+async function showRating(){
+  const snap = await getDoc(ref);
+  if(snap.exists()){
+    const avg=(snap.data().total/snap.data().count).toFixed(1);
+    document.getElementById("rating-text").innerText =
+      "⭐ "+avg+" / 5 ("+snap.data().count+" votes)";
+  }
+}
+showRating();
+window.rate=rate;
 </script>
 
 </body>
