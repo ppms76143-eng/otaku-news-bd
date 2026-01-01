@@ -2,89 +2,70 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mahim | Bio</title>
+<title>Mahim Bio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
   margin:0;
   font-family: Arial, sans-serif;
-  background:linear-gradient(135deg,#000428,#004e92);
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
   color:white;
   text-align:center;
 }
 
-.box{
+.container{
   max-width:420px;
-  margin:30px auto;
-  background:rgba(0,0,0,0.6);
-  padding:25px;
-  border-radius:20px;
-  box-shadow:0 0 25px cyan;
+  margin:auto;
+  padding:20px;
 }
 
-.profile{
+img{
   width:130px;
   height:130px;
   border-radius:50%;
-  border:3px solid cyan;
+  border:3px solid white;
   animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
-  0%{box-shadow:0 0 5px cyan;}
-  50%{box-shadow:0 0 25px cyan;}
-  100%{box-shadow:0 0 5px cyan;}
+  0%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+  100%{transform:scale(1);}
 }
 
-#time{
-  margin:10px 0;
-  font-weight:bold;
-  color:#00ffff;
-}
-
-.music-btn{
-  margin:10px 0;
-  padding:8px 18px;
-  border:none;
-  border-radius:20px;
-  background:#00ffff;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.bio{
-  white-space:pre-line;
-  font-size:14px;
-  line-height:1.6;
-  margin:15px 0;
-}
-
-a.btn{
+.btn{
   display:block;
   margin:10px 0;
   padding:12px;
-  border-radius:30px;
-  color:white;
+  border-radius:25px;
   text-decoration:none;
+  color:white;
   font-weight:bold;
 }
 
-.telegram{background:#229ED9;}
-.youtube{background:#ff0000;}
-.instagram{background:#e1306c;}
+.telegram{background:#0088cc;}
 .discord{background:#5865F2;}
-.gmail{background:#d93025;}
+.youtube{background:#FF0000;}
+.instagram{background:#E1306C;}
+.gmail{background:#00c853;}
 
-/* Rating */
-.rating-box{margin-top:20px;}
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:25px;
+  background:#ff0055;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
 .stars span{
   font-size:30px;
   cursor:pointer;
-  color:gray;
-  transition:0.3s;
+  color:#555;
 }
-.stars span:hover,
+
 .stars span.active{
   color:gold;
 }
@@ -92,128 +73,99 @@ a.btn{
 </head>
 
 <body>
+<div class="container">
 
-<!-- 🎵 MUSIC -->
+<!-- Profile Image -->
+<img src="profile.jpg" alt="Profile">
+
+<h2>🎈 Hello Friends!</h2>
+
+<!-- Bangladesh Time -->
+<p id="time"></p>
+
+<!-- Music -->
 <audio id="bgMusic" loop>
   <source src="Chubina.mp3" type="audio/mpeg">
 </audio>
 
-<div class="box">
+<button onclick="toggleMusic()">🎵 Play / Pause Music</button>
 
-<img src="Insux.jpg" class="profile">
+<hr>
 
-<button class="music-btn" onclick="toggleMusic()">🎵 Play / Pause Music</button>
-
-<div id="time"></div>
-
-<div class="bio">
-ᴇᴀꜱʏ ]
-
-🎈 𝘏𝘭𝘸 𝘍𝘳𝘪𝘦𝘯𝘥𝘴‼️
-𝘞𝘦𝘭𝘤𝘰𝘮𝘦 𝘵𝘰 𝘔𝘺 𝘣𝘪𝘰 
-
-𝘕𝘢𝘮𝘦 :- ᴍᴀʜɪᴍ
-
-𝘒𝘪𝘯𝘥 𝘔𝘶𝘴𝘭𝘪𝘮
-❤️𝘍𝘳𝘰𝘮 🇧🇩 ᴛᴀɴɢᴀɪʟ🍀-𝘉𝘋
-
-  Remember-->
-             Trusting people is, what’s most foolish in this world-- 
-              --Equality is just a fantasy for, the weak to cling to
-
-𝘋𝘳𝘦𝘢𝘮 :- 𝘉𝘦 ʀɪᴄʜ
-𝘊𝘭𝘢𝘴𝘴 :- ꜱꜱᴄ 2ᴋ27
-
-𝘓𝘢𝘯𝘥 𝘰𝘯 𝘌𝘢𝘳𝘵𝘩 :- 22 ᴅᴇᴄ
-𝘎𝘰𝘢𝘭 :- 𝘏𝘰𝘻-ʜᴇᴀᴠᴇɴ
-
-𝘜𝘴𝘦𝘳𝘯𝘢𝘮𝘦 📱 :- @Genius_695
-
-𝘛𝘩𝘢𝘯𝘬𝘴 𝘍𝘰𝘳 𝘝𝘪𝘴𝘪𝘵
-𝘐𝘧 𝘺𝘰𝘶 𝘭𝘪𝘬𝘦 𝘔𝘺 𝘉𝘪𝘰 𝘎𝘪𝘷𝘦 𝘙𝘦𝘢𝘤𝘵𝘪
-</div>
-
+<!-- Social Buttons -->
 <a class="btn telegram" href="https://t.me/EditingCourt" target="_blank">Telegram Channel</a>
-<a class="btn youtube" href="https://www.youtube.com/@mx-okamiz57" target="_blank">YouTube</a>
-<a class="btn instagram" href="https://www.instagram.com/your_avery36/" target="_blank">Instagram</a>
 <a class="btn discord" href="https://discord.com/users/mahimaxt" target="_blank">Discord</a>
-<a class="btn gmail" href="mailto:shakil397576@gmail.com">Email</a>
+<a class="btn youtube" href="https://www.youtube.com/@mx-okamiz57" target="_blank">YouTube</a>
+<a class="btn instagram" href="https://www.instagram.com/your_avery36/?__pwa=1" target="_blank">Instagram</a>
+<a class="btn gmail" href="mailto:shakil397576@gmail.com">Email Me</a>
 
-<div class="rating-box">
-<p>⭐ Rate My Bio</p>
+<hr>
+
+<!-- Rating -->
+<h3>⭐ Rate My Bio</h3>
 <div class="stars">
-  <span data-star="1">★</span>
-  <span data-star="2">★</span>
-  <span data-star="3">★</span>
-  <span data-star="4">★</span>
-  <span data-star="5">★</span>
+  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
 </div>
-<p id="rating-text">⭐ 0.0 / 5 (0 votes)</p>
-</div>
+<p id="rating-text">No ratings yet</p>
+
+<hr>
+
+<!-- BIO -->
+<pre style="text-align:left;white-space:pre-wrap;">
+ᴇᴀꜱʏ ]
+🎈 Hlw Friends‼️
+Welcome to My bio 😘
+
+  
+Name :- MAHIM
+  
+Kind Muslim
+  
+❤️ From 🇧🇩 Tangail - BD
+
+Dream :- Be rich
+  
+Class :- SSC 2K27
+  
+Land on Earth :- 22 Dec
+  
+Goal :- Hoz-Heaven
+
+Username 📱 :- @Genius_695
+
+Thanks For Visit
+If you like My Bio Give Reaction ❤️
+</pre>
 
 </div>
 
 <script>
-/* Bangladesh Time */
-function updateTime(){
-  document.getElementById("time").innerText =
-    "🇧🇩 Bangladesh Time: " +
-    new Date().toLocaleTimeString("en-US",{timeZone:"Asia/Dhaka"});
-}
-setInterval(updateTime,1000);
-updateTime();
-
 /* Music */
 function toggleMusic(){
   const m=document.getElementById("bgMusic");
   m.paused ? m.play() : m.pause();
 }
-</script>
 
-<!-- ⭐ PERFECT RATING SYSTEM -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+/* Bangladesh Time */
+setInterval(()=>{
+  const now=new Date().toLocaleString("en-US",{timeZone:"Asia/Dhaka"});
+  document.getElementById("time").innerText="🇧🇩 Bangladesh Time: "+now;
+},1000);
 
-const firebaseConfig = {
-  apiKey: "PASTE_YOUR_API_KEY",
-  authDomain: "PASTE_YOUR_DOMAIN",
-  projectId: "PASTE_YOUR_PROJECT_ID",
-  storageBucket: "PASTE_YOUR_BUCKET",
-  messagingSenderId: "PASTE_YOUR_SENDER_ID",
-  appId: "PASTE_YOUR_APP_ID"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const ref = doc(db,"ratings","bio");
-
+/* Rating System */
+let total=0,count=0;
 const stars=document.querySelectorAll(".stars span");
 const text=document.getElementById("rating-text");
 
 stars.forEach((s,i)=>{
-  s.addEventListener("click",()=>rate(i+1));
+  s.onclick=()=>{
+    total+=i+1;
+    count++;
+    const avg=(total/count).toFixed(1);
+    text.innerText=`⭐ ${avg} / 5 (${count} votes)`;
+    stars.forEach((x,j)=>x.classList.toggle("active",j<=i));
+  };
 });
-
-async function rate(val){
-  stars.forEach((s,i)=>s.classList.toggle("active",i<val));
-  let total=0,count=0;
-  const snap=await getDoc(ref);
-  if(snap.exists()){total=snap.data().total;count=snap.data().count;}
-  total+=val; count++;
-  await setDoc(ref,{total,count});
-  load();
-}
-
-async function load(){
-  const snap=await getDoc(ref);
-  if(snap.exists()){
-    const avg=(snap.data().total/snap.data().count).toFixed(1);
-    text.innerText=`⭐ ${avg} / 5 (${snap.data().count} votes)`;
-    stars.forEach((s,i)=>s.classList.toggle("active",i<Math.round(avg)));
-  }
-}
-load();
 </script>
 
 </body>
